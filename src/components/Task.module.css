@@ -1,0 +1,57 @@
+.task {
+  background: var(--gray-400);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.task section {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 12px;
+}
+
+.task section span {
+  padding-right: 5px;
+  word-break: break-word;
+  font-size: 0.875rem;
+  color: var(--gray-100);
+  line-height: 19.6px;
+}
+
+.task section span.done {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.checkBtn {
+  color: var(--blue);
+  cursor: pointer;
+  transition: color 100ms;
+}
+
+.checkBtn:hover {
+  color: var(--blue-dark);
+}
+
+.checkBtn img {
+  width: 24px;
+  transition: filter 100ms;
+}
+
+.checkBtn img:hover {
+  filter: brightness(130%)
+}
+
+.deleteBtn {
+  width: 20px;
+  cursor: pointer;
+  transition: color 100ms;
+}
+
+.deleteBtn:hover {
+  color: var(--danger);
+}

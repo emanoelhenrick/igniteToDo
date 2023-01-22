@@ -1,0 +1,52 @@
+.progress {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+.progress>span:first-child {
+  color: var(--blue);
+}
+
+.progress>span:last-child {
+  color: var(--purple);
+}
+
+.count {
+  padding: 2px 8px;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 999px;
+
+}
+
+.tasksEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+}
+
+.tasksEmpty img {
+  width: 56px;
+  margin-bottom: 16px;
+}
+
+.tasksEmpty strong,
+.tasksEmpty span {
+  color: var(--gray-300);
+  line-height: 22.4px;
+
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

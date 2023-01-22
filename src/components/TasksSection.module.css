@@ -1,0 +1,24 @@
+.progress {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+.progress>span:first-child {
+  color: var(--blue);
+}
+
+.progress>span:last-child {
+  color: var(--purple);
+}
+
+.count {
+  padding: 2px 8px;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 999px;
+
+}
