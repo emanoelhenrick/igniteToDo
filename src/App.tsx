@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import styles from './App.module.css'
-import rocketLogo from './assets/rocket-logo.svg'
-import { InputTask } from './components/InputTask'
-import { TaskSection } from './components/TasksSection'
+import React from "react";
+import { useState } from "react";
+import styles from "./App.module.css";
+import rocketLogo from "./assets/rocket-logo.svg";
+import { InputTask } from "./components/InputTask";
+import { TaskSection } from "./components/TasksSection";
 
 
 function App() {
@@ -13,10 +14,10 @@ function App() {
     id: string;
   }
 
-  const [taskList, setTasklist] = useState<Array<Task>>([])
+  const [taskList, setTasklist] = useState<Array<Task>>([]);
 
   function generateID() {
-    let array = new Uint32Array(4);
+    const array = new Uint32Array(4);
     window.crypto.getRandomValues(array);
     let str = "";
     for (let i = 0; i < array.length; i++) {
@@ -26,19 +27,17 @@ function App() {
   }
 
   function addTask(content: string) {
-
     const newTask = {
       content: content,
       check: false,
       id: generateID()
-    }
-    setTasklist([...taskList, newTask])
+    };
+    setTasklist([...taskList, newTask]);
   }
 
   function deleteTask(taskId: string) {
-    const newTasks = taskList.filter(task => task.id !== taskId)
-    setTasklist(newTasks)
-
+    const newTasks = taskList.filter(task => task.id !== taskId);
+    setTasklist(newTasks);
   }
 
   function checkTask(taskId: string) {
@@ -46,21 +45,21 @@ function App() {
     const newTasks = taskList.map(task => {
       if (task.id === taskId) {
         if (task.check === true) {
-          task.check = false
+          task.check = false;
         } else {
-          task.check = true
+          task.check = true;
         }
-        return task
+        return task;
       }
-      return task
-    })
+      return task;
+    });
 
-    setTasklist(newTasks)
+    setTasklist(newTasks);
   }
 
   function progressTasks() {
-    const tasksCompleted = taskList.filter(task => task.check === true)
-    return tasksCompleted.length
+    const tasksCompleted = taskList.filter(task => task.check === true);
+    return tasksCompleted.length;
   }
 
   return (
@@ -81,14 +80,9 @@ function App() {
           tasksCreated={taskList.length}
           tasksProgress={progressTasks()}
         />
-
-
       </div>
-
     </div>
-  )
-
-
+  );
 }
 
-export default App
+export default App;

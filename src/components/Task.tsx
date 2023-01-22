@@ -1,6 +1,7 @@
-import styles from './Task.module.css'
-import { Trash, Circle } from 'phosphor-react'
-import checkIcon from '../assets/check.svg'
+import React from "react";
+import styles from "./Task.module.css";
+import { Trash, Circle } from "phosphor-react";
+import checkIcon from "../assets/check.svg";
 
 interface Task {
   content: string;
@@ -16,31 +17,29 @@ interface TaskProps {
 
 export function Task(props: TaskProps) {
 
-
   function checkBtn() {
     if (!props.contentTask.check) {
-      return <Circle size={24} />
+      return <Circle size={24} />;
     } else {
-      return <img src={checkIcon} />
+      return <img src={checkIcon} />;
     }
   }
 
   function checkSpan() {
     if (!props.contentTask.check) {
-      return ''
+      return "";
     } else {
-      return styles.done
+      return styles.done;
     }
   }
 
   function deleteTask() {
-    props.deleteTask(props.contentTask.id)
+    props.deleteTask(props.contentTask.id);
   }
 
   function checkTask() {
-    props.checkTask(props.contentTask.id)
+    props.checkTask(props.contentTask.id);
   }
-
 
   return (
     <div>
@@ -52,6 +51,5 @@ export function Task(props: TaskProps) {
         <div onClick={deleteTask} className={styles.deleteBtn}><Trash size={20} /></div>
       </section>
     </div>
-  )
+  );
 }
-

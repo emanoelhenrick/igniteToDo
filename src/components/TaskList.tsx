@@ -1,6 +1,8 @@
-import styles from './TaskList.module.css'
-import { Task } from './Task'
-import clipIcon from '../assets/Clipboard.svg'
+/* eslint-disable react/prop-types */
+import React from "react";
+import styles from "./TaskList.module.css";
+import { Task } from "./Task";
+import clipIcon from "../assets/Clipboard.svg";
 
 interface Task {
   content: string;
@@ -11,7 +13,7 @@ interface Task {
 interface TaskSectionProps {
   content: Task[];
   deleteTask: (taskId: string) => void;
-  checkTask: (taskid: string) => void;
+  checkTask: (taskId: string) => void;
   tasksCreated: number;
   tasksProgress: number;
 }
@@ -31,7 +33,7 @@ export function TaskList({ props }: TKProps) {
           <strong>Você ainda não tem tarefas cadastradas</strong>
           <span>Crie tarefas e organize seus itens a fazer</span>
         </div>
-      )
+      );
     } else {
       return (
         <div className={styles.tasks}>
@@ -43,10 +45,10 @@ export function TaskList({ props }: TKProps) {
                 deleteTask={props.deleteTask}
                 checkTask={props.checkTask}
               />
-            )
+            );
           })}
         </div>
-      )
+      );
     }
   }
 
@@ -60,7 +62,6 @@ export function TaskList({ props }: TKProps) {
 
       {renderTasks()}
 
-
     </div>
-  )
+  );
 }

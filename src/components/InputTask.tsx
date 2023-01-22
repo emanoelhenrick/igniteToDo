@@ -1,6 +1,7 @@
-import './InputTask.module.css'
-import { PlusCircle } from 'phosphor-react'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import React from "react";
+import "./InputTask.module.css";
+import { PlusCircle } from "phosphor-react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 interface InputProps {
   onAddTask: (newTask: string) => void
@@ -8,20 +9,19 @@ interface InputProps {
 
 export function InputTask({ onAddTask }: InputProps) {
 
-  const [newTask, setNewTask] = useState('')
+  const [newTask, setNewTask] = useState("");
 
   function onSubmitTask(event: FormEvent) {
-    event.preventDefault()
-
-    onAddTask(newTask)
-    setNewTask('')
+    event.preventDefault();
+    onAddTask(newTask);
+    setNewTask("");
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
-    setNewTask(event.target.value)
+    setNewTask(event.target.value);
   }
 
-  const isNewTask = newTask.length === 0
+  const isNewTask = newTask.length === 0;
 
   return (
     <div>
@@ -40,5 +40,5 @@ export function InputTask({ onAddTask }: InputProps) {
         </button>
       </form>
     </div>
-  )
+  );
 }

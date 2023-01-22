@@ -1,4 +1,5 @@
-import { TaskList } from './TaskList'
+import React from "react";
+import { TaskList } from "./TaskList";
 
 interface Task {
   content: string;
@@ -22,5 +23,5 @@ export function TaskSection(props: TaskSectionProps) {
         <TaskList props={props} />
       </div>
     </div>
-  )
+  );
 }
