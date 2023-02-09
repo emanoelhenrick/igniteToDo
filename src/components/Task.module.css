@@ -55,3 +55,11 @@
 .deleteBtn:hover {
   color: var(--danger);
 }
+
+.dark {
+  background: black;
+}
+
+.light {
+  background: white;
+}

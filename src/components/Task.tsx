@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Task.module.css";
 import { Trash, Circle } from "phosphor-react";
 import checkIcon from "../assets/check.svg";
+import { ThemeContext } from "../ThemeContext";
 
 interface Task {
   content: string;
@@ -41,9 +42,11 @@ export function Task(props: TaskProps) {
     props.checkTask(props.contentTask.id);
   }
 
+  const theme = useContext(ThemeContext);
+
   return (
     <div>
-      <section className={styles.task}>
+      <section className={`${styles.task} ${styles[theme]}` }>
         <section>
           <div onClick={checkTask} className={styles.checkBtn}>{checkBtn()}</div>
           <span className={checkSpan()}>{props.contentTask.content}</span>

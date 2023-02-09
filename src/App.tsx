@@ -4,6 +4,8 @@ import styles from "./App.module.css";
 import rocketLogo from "./assets/rocket-logo.svg";
 import { InputTask } from "./components/InputTask";
 import { TaskSection } from "./components/TasksSection";
+import { ThemeProvider } from "./ThemeContext";
+
 
 
 function App() {
@@ -62,9 +64,12 @@ function App() {
     return tasksCompleted.length;
   }
 
-  return (
-    <div>
+  
+    
+  
 
+  return (
+    <ThemeProvider>
       <header className={styles.header}>
         <img src={rocketLogo} />
         <h1>to<span>do</span></h1>
@@ -81,7 +86,7 @@ function App() {
           tasksProgress={progressTasks()}
         />
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
