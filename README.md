@@ -30,7 +30,4 @@ Execute o preview
 ```
 
 
-## Screenshots
-
-
 
